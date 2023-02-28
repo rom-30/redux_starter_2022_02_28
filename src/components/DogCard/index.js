@@ -1,12 +1,15 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { toggleLike, deleteDoggo } from '../../actions';
 import { LikeButton, DeleteButton } from '..';
 
 const DogCard = ({ doggo }) => {
   const { id, img, liked } = doggo
+  const dispatch = useDispatch()
 
-  const handleToggleLike = id => console.log('like dog', id);
+  const handleToggleLike = id => dispatch(toggleLike(id))
 
-  const handleDelete = id => console.log('delete dog', id);
+  const handleDelete = id => dispatch(deleteDoggo(id))
 
   return (
     <div className="card">

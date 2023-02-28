@@ -10,4 +10,12 @@ describe('App', () => {
     userEvent.click(heading)
     expect(axios.get).toHaveBeenCalled()
   })
+
+  test('it renders error if error existts', () => {
+    const initState = { loading: true, doggos: [], error: new Error('Bad Things') }
+    renderWithReduxProvider(<App />, { initState })
+    const error = screen.getByRole('alert')
+    expect(error).toBeInTheDocument()
+    expect(error.textContent).toBe('Bad Things')
+  })
 })

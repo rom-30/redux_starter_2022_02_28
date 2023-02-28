@@ -11,7 +11,11 @@
     "@fortawesome/react-fontawesome": "^0.1.13",
     "axios": "^0.21.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.12.1",
@@ -31,7 +35,7 @@
   "scripts": {
     "test": "jest --watch --verbose --setupFilesAfterEnv ./src/test/setupTests.js",
     "coverage": "jest --setupFilesAfterEnv ./src/test/setupTests.js --coverage --silent --watchAll=false",
-    "dev": "webpack-cli serve --mode development --config config/webpack.config.dev.js",
+    "dev": "webpack serve --mode development --config config/webpack.config.dev.js",
     "build": "webpack --config config/webpack.config.production.js"
   },
   "jest": {
